@@ -67,15 +67,10 @@ function HomeToDoList() {
               </div>
             ))}
 
-            {/* <div className="taskItem">
-              <h4>
-                my name is harpal singh, i am video editor and web devloper, i
-                am good in video editing and developement
-              </h4>
-              <button>🗑️</button>
-            </div> */}
           </div>
         </div>
+
+
       </div>
     </div>
   );

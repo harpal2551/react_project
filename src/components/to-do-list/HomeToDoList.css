@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 #bgVideo {
   position: fixed;
@@ -16,7 +17,7 @@
   text-align: center;
   margin: 10vh 60vh;
   padding: 2vh;
-  /* border: 2px solid red; */
+  /* border: 4px solid red; */
   /* border-left: 1px solid black;
   border-right: 1px solid black; */
 }
@@ -24,9 +25,22 @@
   font-size: 8vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.inputBox input {
-  height: 5vh;
-  width: 40vh;
+.inputBox{
+  justify-content: center;
+  /* border: 2px solid yellow; */
+  display: flex;
+  /* max-width: fit-content; */
+}
+.inputBox form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.inputBox form input {
+  flex: 1;
+  height: 5dvh;
+  min-width: 150px;
+  /* max-width: fit-content; */
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
@@ -55,8 +69,9 @@
   /* justify-content: center; */
   flex-direction: column;
   overflow-y: auto;
-  /* border: 2px solid red; */
-  height: 302px;
+  max-width: 100dvh;
+  height: 440px;
+  /* max-height: 60vh; */
   gap: 2vh; /* space between each task item */
   scrollbar-width: thin;
   scrollbar-color: rgba(108, 106, 106, 0.4) transparent;
@@ -88,24 +103,43 @@
 .listShow .taskItem {
   /* border: 2px solid orangered; */
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  min-height: 10vh;
+  width: 100%;         /* Full width of the parent */
+  max-width: 520px;    /* Optional: limit max width */
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 }
 .listShow .taskItem h4 {
   padding: 1vh 3vh;
   /* border: 2px solid black; */
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   /* width: 45vh; */
-  max-width: 40vh;
+  /* border: 2px solid green; */
+  max-width: 400px;
+   max-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: max-width 0.2s ease;
+   transition: all 0.5s ease;
+  /* transition: max-width 0.2s ease; */
   font-family: Arial, Helvetica, sans-serif;
   text-transform: capitalize;
 }
 .taskItem h4:hover {
   /* background-color: red; */
   transition: 1.1s;
-  max-width: 70vh;
+  /* margin-top: 30vh; */
+  /* max-width: 70vh; */
+  /* max-height: 40vh; */
+  max-height: 10em; 
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  /* overflow: hidden; */
   white-space: normal;
 }
 .taskItem button {
@@ -120,4 +154,106 @@
 }
 .taskItem button:hover {
   background-color: red;
+}
+
+/* responsive website */
+@media (min-width: 359px) and (max-width: 410px) {
+  /* *{background-color: yellow;} */
+  .listDesign{
+    margin: auto;
+    /* border: 2px solid red; */
+    margin-top: 10vh;
+  }
+  .listDesign .title{
+    font-size: 6vh;
+  }
+  .inputBox form input{
+    max-width: 28dvh;
+    margin-left: 4vh;
+    /* border: 2px solid purple; */
+  }
+  /* .inputBox{
+    border: 2px solid red;
+  } */
+  .listShow{
+    /* border: 2px solid green; */
+    height: 440px;
+    max-width: 400px;
+  }
+  .listShow .taskItem{
+    /* border: 2px solid purple; */
+    max-width: 290px;
+    min-height: 5vh;
+  }
+  .listDesign .taskItem h4{
+    max-width: 25vh;
+    padding: 1vh 1vh;
+    /* border: 2px solid yellow; */
+  }
+}
+@media (min-width: 411px) and (max-width: 428px) {
+  /* *{background-color: yellow;} */
+  .listDesign{
+    margin: auto;
+    /* border: 2px solid red; */
+    margin-top: 10vh;
+  }
+  .listDesign .title{
+    font-size: 6vh;
+  }
+  .inputBox form input{
+    width: 28dvh;
+    margin-left: 4vh;
+    /* border: 2px solid purple; */
+  }
+  /* .inputBox{
+    border: 2px solid red;
+  } */
+  .listShow{
+    /* border: 2px solid green; */
+    height: 440px;
+    max-width: 500px;
+  }
+  .listShow .taskItem{
+    /* border: 2px solid purple; */
+    max-width: 363px;
+    min-height: 5vh;
+  }
+  .listDesign .taskItem h4{
+    max-width: 30vh;
+    /* border: 2px solid yellow; */
+  }
+}
+@media (min-width: 429px) and (max-width: 500px) {
+  /* *{background-color: yellow;} */
+  .listDesign{
+    margin: auto;
+    /* border: 2px solid red; */
+    margin-top: 10vh;
+  }
+  .listDesign .title{
+    font-size: 6vh;
+  }
+  .inputBox form input{
+    width: 28dvh;
+    margin-left: 4vh;
+    /* border: 2px solid purple; */
+  }
+  /* .inputBox{
+    border: 2px solid red;
+  } */
+  .listShow{
+    /* border: 2px solid green; */
+    height: 440px;
+    max-width: 400px;
+  }
+  .listShow .taskItem{
+    /* border: 2px solid purple; */
+    min-width: 350px;
+    min-height: 5vh;
+  }
+  .listDesign .taskItem h4{
+    max-width: 28vh;
+    /* border: 2px solid yellow; */
+  }
 }
